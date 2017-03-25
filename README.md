@@ -1,2 +1,2 @@
 # Python-and-packages
-It contains Python notes and different packages used in Python
+It contains notes  in Python and different packages used in Python
