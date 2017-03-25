@@ -1,0 +1,270 @@
+1. When want to print quotes(') or(" ") within print, we need to write character \ before every quote or we can simple write like print(r" ");
+   r here tells to print the exact string within print(" ");
+   comments- single line # and multiple line '''
+
+2. We can simply add two strings by + operator( but cannot use *,- ,/). similarly, if we want to repeat a string n times, we can multiply the
+   string by  n.
+   Can also print character like a[i]. last index would be as in case a="abc" is i=2
+   Also supports -ive indexing(also in lists) i.e. mapp last element as a[-1] and so on.
+ 
+3. List supports [:] indexing i.e. a=[1,2,3,4,5]   print(a[-5:-2]) :-[1, 2, 3] or print(a[-3:]) :-[3, 4, 5] or print(a[:-2]) :-[1, 2, 3] (same with +ive indexing).  # this ( is due to ( after print. We can also use print only.
+   Adding elements to the list a=a+[23,34,45,454] or a.append(120)  :-[1, 2, 3, 4, 5, 120] and a.append([120,121]); :-[1, 2, 3, 4, 5 [120, 121]]
+   We cannot add more than one element in the append parameter(though datatype of parameter doesn't bother).No append() in string.
+   updating a section of list a[:3]=[15]. It will delete first 3 elements and replace them by 15, so now list length reduces by 1. We can also 
+   delete a section of list  a[:2}=[] will delete a[0] and a[1]. Likewise, a[:]=[] will delete whole list. Output- [] # Empty list.
+   print 'sdd',2,'232'   ->sdd 2 232   and print('sdd',2,'232')  ->('sdd' 2 '232')  and     print(' notta ')  output->  notta  and print(3,'fd')
+   output-> (3,'fd')
+
+4. Space matter:
+   print('dfd')       #Run OK
+      print('dfddc')  #Error(space before print())
+
+5. if condition:      # for comparing string/character, use like 'if f is 'a'' or 'if f==a': . is can also be used with all other datatypes. 
+     statement1       # have to leave atleast one space (but equal for both 1 and 2) before statement1,2 otherwise error.
+     statement2
+   elif condition:
+          statement
+   else:
+      statement
+statement      # has to start w/o any space.
+   if n in abc   # check if n is present as any element in the array abc
+
+6. for iterator in array_name:   # may be  array_name[2:4]:
+        statement1      #may be print(iterator)     #both statements need to be aligned   # can perform operation if array element is int,float
+        statement2      # in case of array_element as string or char, we can use len(iterator) to find length of string;
+        if condition:
+          statement3
+
+ for f in range(5):   # starting value of f is 0 and last output will be 4 
+   print(f);     
+ for f in range(5,40,5):  # if we allign this for with above printf if will be nested loop with no ambiguity of same iterator name
+   print(f);              # last output will be 35
+ a=3; 			  # break is normal as in other languages
+ while a>1:
+  print(a);
+  a=a-1;
+ fruits = ['banana', 'apple',  'mango'] # another way of for loop
+ for index in range(len(fruits)):
+    print 'Current fruit :', fruits[index]
+ for i in range(23,2,-1) # reverse loop
+ for _ in range(10) or for _ in range(1,10,1) or for _ in range(1,10)  # we don't bother about the variable, we just want to iterate 10 times
+
+7. print()    # output=()
+   print     # empty line
+
+8. Multiline comments '''          '''
+
+9. Functions Syntax
+def fuu( a,b,c):
+   if a>b:
+     if a>c:
+       print a,"a is largest"
+     else:
+      print c,"c is largest"
+   elif b>a:
+     if b>c:
+        print b, "b is largest";
+     else:
+       print c,"c is largest";
+   else:
+     print (c, "c is largest");
+
+
+fuu(1,3,2)
+fuu(3,1,2)
+fuu(3,1,22)
+
+10. l=int(3);  # if (int)3 then error
+    p=(l/2)    # p=1.5
+    q=int(l/2) # q=1
+
+11. return is same as in c++ i.e. use a=find()
+
+12. for i in range(10):
+    pass          # empty statement in python
+print(i)          # no error i=9
+    scope of variable is above the fun() call and under the function in which it is declared
+    Ex. def abc():
+              print(i)
+	def deff():
+   	     print(i);
+	abc();      # i is not accessible to abc()
+	i=23
+	deff();     # i can be accessed by deff()  note that function name cannot be def as it clashes with the keyword 'def'
+
+13. It allows providing some of the default arguments not necessarily in order
+    def fun(a=23,b='aszx',c=23.2):
+   		print(a,b,c)
+    fun('sd',2.23,'afd')
+    fun()
+    fun(b=34,c='dfd') # accessing b and c of fun(). Can also pass like fun(c='dfd',b=34) in any order
+    fun(a=22)
+    print(b)      #gives error as b has scope limited to fun() only
+    
+    Output:-sd 2.23 afd
+            23 aszx 23.2
+            23 34 dfd
+            22 aszx 23.2
+
+14. We can have def abc(abc):  # same name of function and variable.
+		    fin=abc*2  
+    return method is same as that in C++.
+
+15. def abc(*pp):  #passing variable no. of arguments to the function
+          total=0
+          for i in range(len(pp)):
+               total+=pp[i]
+          print(total)
+    abc(2,2,3,4,3)
+
+16. #unpacking of variables
+    def perc(a,b):  
+       total=float(a*2+b*3)/6
+       print (total)
+    ashu=[14,2]
+    perc(*ashu);  #passing complete list at one time but len(ashu)must be = no. of arguments of perc.
+
+17. Set is same as that of list with one exception that it does not contain duplicate items
+    sett={'a',34.0,34.3,34}
+    for i in sett:
+         print i;      # output is rearranged in random order with no repetition
+    print(len(sett));  # output will be a 34.0 34.3 and length is 3 not 4 
+    adding elements in set is like s.add(34) while in list it is like l.append(34)
+    Both list and set support sorted(s) function . It will not sort list or set but can be used for print(sorted(s))or
+    like c=[x+y for x,y in zip(sorted(a),b)]
+    sorted() can sort all types whether elements are of type 's','e','dfdf' or (3,4),(3,44) etc. any combination of it.
+
+18. Adding,sub.,multi.,dividing two lists    c=[x+y for x,y in zip(a,b)]  # a and b are two lists
+    if a=[1,2.5,3,4] and b=[1,2] then output is [2,4.5] # adding only upto smaller no. of elements
+    if any element is string or character, then it will give error
+
+19. Dictionary: It is similar to map in C++
+	a={2:23,4:22,5:33,2:'dsd'}  
+	for i,j in a.items():
+  	       print(i,j)     #print all the keys and values
+	print a[2]            #print value corresponding to key 2 i.e. 'dsd' not 23
+	print a[33]	      #give error
+        print a		      #give all keys and corresponding values
+
+20. Modules are like using other python programs in your python code by writing :
+    import module2
+    import random
+    x=random.randrange(1,4)  # print random no. from 1 to 3
+    print x
+    print module2.fun();  # call fun function from module2
+
+21. Downloading image 
+    import random 
+    import urllib.request
+    def find(url):
+      name=random.randrange(1,1000)
+      full=str(name)+'.jpg'    # naming the file
+      urllib.request.urlretrieve(url,full)
+    find("https://scontent.fixc1-1.fna.fbcdB962")
+
+22. In python, we can not convert an non-numeral to integer by writing like int(c)
+    reading a file fw=open('abc.txt','r')     text=fw.read()    fw.close()
+	writing a file fw=open('abc.txt','w')  fw.write('dfdfd')    fw.close()
+
+23. Downloading a file :
+	import urllib
+	url="http://www.pdf995.com/samples/pdf.pdf"
+	def fun(up):
+		rp=urllib.urlopen(up)
+		des="abc.pdf"
+		fx=open(des,'w')
+		fx.write(rp.read())
+		fx.close()
+		print (" finished")
+	fun(url)
+
+24. Handling execptions in Python:
+      while True:
+	try:	
+		a=int(input("Enter a no.\n"))
+		print("You have entered ",a)
+		break
+	except ValueError:
+		print("Enter integer only")
+	except:
+		print("Try again")
+
+25. Classes and objects:
+    class Enemy:
+	life=5            # no need to define here, it can be defined directly inside function like self.life=34 in kill(self)
+	def kill(self):   # if we don't use self, it will give error. Doesn't depend on whether we are using life variable or not
+		print("ouch") # We can also print self, it will give something like    <__main__.Enemy object at 0x7fcce2307a90>
+		#self.life-=1
+	def check(self):
+		if(self.life<=0):
+			print("Dead")
+		else:
+			print(str(self.life)+" lives left")
+     k1=Enemy()
+     k2=Enemy()
+     k1.kill()
+     k1.check()
+     k2.check()
+
+26. __init()-> works similar as of consructor():
+    class Enemy:
+	def __init__(self,lt):
+		self.lt=lt
+	def show(self):
+		print(self.lt)
+    e1=Enemy(23)  #error if no argument is given
+    e1.show()
+    Cannot have functional overloading, in that case only the underneath init() will be treated as final copy.Can do default arguments
+
+27. Inheritance:
+    class Parent:
+	def __init__(self):            # No parent called in case of object of child class
+		print("In first")
+	def last_name(self):
+		self.last='sharma'
+    class chil(Parent):
+	def __init__(self):
+		print("IN child")
+	def first_name(self):
+		self.first='Ashish'
+	def last_name(self):          # will overload parent's last_name
+		self.last='$harma'
+    e1=chil()                IN child
+    e1.last_name()
+    e1.first_name()
+    e2=Parent()		     In first
+    e2.last_name()
+    print(e1.first,e1.last,e2.last);    #Ashish $harma sharma
+
+28. No functional overloading in Python, the latest copy will become the original like:
+    def fun(a,b):
+	print(a,b)
+    def fun(a,b,c):
+        print(a,b,c)
+    fun(1,2,3)   # 1 2 3
+    fun(1,2)     # Error
+
+29. Multiple inheritance:
+    class Parent:
+	def last_name(self):
+		self.last='sharma'
+    class grand:
+    def last_name(self):
+       self.last='$harma'
+    class final(grand,Parent):  # last_name() will be used of the class written first here, in this case it will print- $harma
+	pass
+    f1=final()   
+    f1.last_name()
+    print(f1.last)
+
+30. Threading:
+    import threading
+    class One(threading.Thread):    # inheriting form Thread class of package threading
+	def run(self):
+		for _ in range(1,10,2): # can use i as iterator here
+			print(threading.currentThread().getName()) # will print name of the running thread
+    x=One(name='abc') 
+    y=One(name='cde')
+    x.start()   # call to run method in One
+    y.start()  # print abc and cde in random order
+
